@@ -181,3 +181,275 @@ pre code { background: none; padding: 0; color: var(--nc-text); }
   h2 { font-size: 1.75rem; }
   .nc-container { padding: var(--nc-space-md) var(--nc-space-sm); }
 }
+
+/* ============================================================
+   RTL support
+   ============================================================ */
+[dir="rtl"] code { direction: ltr; unicode-bidi: embed; }
+[dir="rtl"] pre  { direction: ltr; text-align: left; }
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.nc-hero {
+  padding: 6rem 0 4rem;
+  text-align: center;
+}
+.nc-hero h1 {
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  max-width: 900px;
+  margin: 0 auto var(--nc-space-md);
+  line-height: 1.15;
+}
+.nc-hero p {
+  font-size: 1.15rem;
+  max-width: 720px;
+  margin: 0 auto var(--nc-space-lg);
+  color: var(--nc-text-muted);
+}
+.nc-hero .nc-cta-row {
+  display: flex;
+  gap: var(--nc-space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================
+   Section header
+   ============================================================ */
+.nc-section-header {
+  text-align: center;
+  margin-bottom: var(--nc-space-lg);
+}
+.nc-section-header h2 {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  margin-bottom: 0.5rem;
+}
+.nc-section-header p {
+  color: var(--nc-text-muted);
+  font-size: 1.05rem;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.nc-eyebrow {
+  display: inline-block;
+  color: var(--nc-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: var(--nc-space-sm);
+}
+
+/* ============================================================
+   Numbered cards
+   ============================================================ */
+.nc-num-card {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-radius-md);
+  padding: var(--nc-space-md);
+  position: relative;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.nc-num-card:hover {
+  border-color: var(--nc-primary);
+  transform: translateY(-2px);
+}
+.nc-num-card .nc-num {
+  display: block;
+  color: var(--nc-primary);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: var(--nc-space-sm);
+  letter-spacing: 0.08em;
+}
+.nc-num-card h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+.nc-num-card p {
+  margin: 0;
+  color: var(--nc-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Flow visualization (Discover → Design → Validate → Deploy)
+   ============================================================ */
+.nc-flow {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: var(--nc-space-sm);
+  flex-wrap: wrap;
+  margin: var(--nc-space-lg) 0;
+}
+.nc-flow-step {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-radius-md);
+  padding: 1.25rem 1.75rem;
+  min-width: 160px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.05rem;
+  position: relative;
+}
+.nc-flow-step .nc-flow-num {
+  display: block;
+  color: var(--nc-primary);
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.8rem;
+  margin-bottom: 0.35rem;
+  letter-spacing: 0.1em;
+}
+.nc-flow-arrow {
+  display: flex;
+  align-items: center;
+  color: var(--nc-primary);
+  font-size: 1.5rem;
+  font-weight: 300;
+  user-select: none;
+}
+@media (max-width: 720px) {
+  .nc-flow { flex-direction: column; align-items: center; }
+  .nc-flow-arrow { transform: rotate(90deg); }
+}
+
+/* ============================================================
+   Comparison columns (Traditional vs NanoCo)
+   ============================================================ */
+.nc-compare {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--nc-space-md);
+}
+.nc-compare-col {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-radius-md);
+  padding: var(--nc-space-md);
+}
+.nc-compare-col h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 var(--nc-space-sm);
+  color: var(--nc-text-muted);
+}
+.nc-compare-col--accent h4 { color: var(--nc-accent); }
+.nc-compare-col--primary {
+  border-color: var(--nc-primary);
+  box-shadow: var(--nc-shadow-glow);
+}
+.nc-compare-col--primary h4 { color: var(--nc-primary); }
+.nc-compare-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nc-compare-col ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--nc-border);
+  font-size: 1rem;
+}
+.nc-compare-col ul li:last-child { border-bottom: none; }
+
+/* ============================================================
+   Tag cards (small visual chips)
+   ============================================================ */
+.nc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+}
+.nc-tag {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  border-radius: 999px;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+  color: var(--nc-text);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.nc-tag:hover {
+  border-color: var(--nc-primary);
+  color: var(--nc-primary);
+}
+
+/* ============================================================
+   Pull quote / big statement
+   ============================================================ */
+.nc-quote {
+  text-align: center;
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  line-height: 1.4;
+  font-weight: 500;
+  max-width: 820px;
+  margin: var(--nc-space-lg) auto;
+  color: var(--nc-text);
+}
+.nc-quote em {
+  font-style: normal;
+  color: var(--nc-primary);
+}
+
+/* ============================================================
+   Final / closing statement panel
+   ============================================================ */
+.nc-final {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-primary);
+  border-radius: var(--nc-radius-lg);
+  padding: var(--nc-space-lg);
+  box-shadow: var(--nc-shadow-glow);
+  text-align: center;
+}
+.nc-final h2 { margin-bottom: var(--nc-space-md); }
+.nc-final ul {
+  list-style: none;
+  padding: 0;
+  margin: var(--nc-space-md) auto var(--nc-space-lg);
+  max-width: 520px;
+  text-align: start;
+}
+.nc-final ul li {
+  padding: 0.45rem 0;
+  color: var(--nc-text-muted);
+  border-bottom: 1px solid var(--nc-border);
+}
+.nc-final ul li:last-child { border-bottom: none; }
+.nc-final ul li::before {
+  content: "→";
+  color: var(--nc-primary);
+  margin-inline-end: 0.6rem;
+  font-weight: 600;
+}
+[dir="rtl"] .nc-final ul li::before { content: "←"; }
+.nc-final-statement {
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--nc-text);
+  margin-top: var(--nc-space-md);
+}
+.nc-final-statement em {
+  font-style: normal;
+  color: var(--nc-primary);
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.nc-footer {
+  border-top: 1px solid var(--nc-border);
+  margin-top: var(--nc-space-xl);
+  padding: var(--nc-space-lg) 0;
+  text-align: center;
+  color: var(--nc-text-muted);
+  font-size: 0.9rem;
+}
+.nc-footer .nc-primary { font-weight: 600; }
