@@ -427,6 +427,128 @@ span[data-lang] { display: inline; }
 .nc-report-cell .nc-cell-value .nc-primary { color: var(--nc-primary); }
 
 /* ============================================================
+   Pillars (Core Principle / What It Takes — 4 label+value cards)
+   ============================================================ */
+.nc-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--nc-space-md);
+}
+.nc-pillar {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-radius-md);
+  padding: var(--nc-space-md);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.nc-pillar:hover {
+  border-color: var(--nc-primary);
+  transform: translateY(-2px);
+}
+.nc-pillar .nc-pillar-label {
+  display: block;
+  color: var(--nc-primary);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.nc-pillar .nc-pillar-value {
+  display: block;
+  color: var(--nc-text);
+  font-size: 1.05rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   Phase block (groups steps under a single phase header)
+   ============================================================ */
+.nc-phase {
+  margin-bottom: var(--nc-space-lg);
+}
+.nc-phase-header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--nc-space-sm);
+  margin-bottom: var(--nc-space-md);
+  padding-bottom: var(--nc-space-sm);
+  border-bottom: 1px solid var(--nc-border);
+}
+.nc-phase-header .nc-phase-tag {
+  font-family: 'SF Mono', Monaco, monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--nc-primary);
+  background: rgba(86, 237, 214, 0.08);
+  border: 1px solid rgba(86, 237, 214, 0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+}
+.nc-phase-header h3 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+/* Step card with bottom Output row */
+.nc-step-card {
+  background: var(--nc-panel);
+  border: 1px solid var(--nc-border);
+  border-radius: var(--nc-radius-md);
+  padding: var(--nc-space-md);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.nc-step-card:hover {
+  border-color: var(--nc-primary);
+  transform: translateY(-2px);
+}
+.nc-step-card .nc-step-num {
+  font-family: 'SF Mono', Monaco, monospace;
+  color: var(--nc-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.45rem;
+}
+.nc-step-card h4 {
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+  color: var(--nc-text);
+}
+.nc-step-card p {
+  margin: 0 0 var(--nc-space-md);
+  color: var(--nc-text-muted);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  flex: 1;
+}
+.nc-step-card .nc-output-line {
+  margin-top: auto;
+  padding-top: var(--nc-space-sm);
+  border-top: 1px solid var(--nc-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.nc-step-card .nc-output-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--nc-text-muted);
+}
+.nc-step-card .nc-output-value {
+  font-size: 0.95rem;
+  color: var(--nc-primary);
+  font-weight: 500;
+}
+
+/* ============================================================
    Final CTA panel
    ============================================================ */
 .nc-cta-panel {
